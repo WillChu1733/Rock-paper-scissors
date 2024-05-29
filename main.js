@@ -13,22 +13,24 @@ console.log(getComputerChoice())
 function getHumanChoice() {
   let choice = prompt('Choose rock, paper, or scissors', 'test') // open the prompt
 
-  if (choice.toLowerCase == 'rock') {
-    console.log('you chose rock')
-  } else if (choice.toLowerCase == 'paper') {
-    console.log('you chose paper')
-  } else if (choice.toLowerCase == 'scissors') {
-    console.log('you chose scissors')
-  } else return console.log('error')
+  // if (choice.toLowerCase == 'rock') {
+  //   console.log('you chose rock')
+  // } else if (choice.toLowerCase == 'paper') {
+  //   console.log('you chose paper')
+  // } else if (choice.toLowerCase == 'scissors') {
+  //   console.log('you chose scissors')
+  // } else return console.log('error')
+  const humanChoice = choice.toLowerCase()
+  return humanChoice
 }
 
-// getHumanChoice()
+console.log(getHumanChoice())
 
-// //initialise scores of both players starting at 0
-// const humanScore = 0
-// const computerScore = 0
+//initialise scores of both players starting at 0
+const humanScore = 0
+const computerScore = 0
 
-// function playRound(humanChoice, computerChoice) {}
+const playRound = (humanChoice, computerChoice) => {}
 
 // const humanSelection = getHumanChoice()
 // const computerSelection = getComputerChoice()
