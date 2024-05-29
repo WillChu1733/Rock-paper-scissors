@@ -1,7 +1,9 @@
-// computer choice picks random number 0-2
+// computer choice picks random number 1-3
 // each number represents rock, paper or scissors
-function getComputerChoice() {
-  return Math.floor(Math.random() * 3) + 1
-}
+const getComputerChoice = () => Math.floor(Math.random() * 3) + 1
 
 console.log(getComputerChoice())
+
+// function getHumanChoice() {
+
+// }
