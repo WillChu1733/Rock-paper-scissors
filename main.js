@@ -1,3 +1,7 @@
+//initialise scores of both players starting at 0
+let humanScore = 0
+let computerScore = 0
+
 // computer choice picks random number 0-2
 // random number is used as an index to select and log a string from the arrayOfChoices array
 const getComputerChoice = () => {
@@ -10,17 +14,13 @@ const getComputerChoice = () => {
 
 console.log('Computer chooses:', getComputerChoice())
 
-function getHumanChoice() {
-  let choice = prompt('Choose rock, paper, or scissors', 'test') // open the prompt
-  const humanChoice = choice.toLowerCase()
-  return humanChoice
-}
+// function getHumanChoice() {
+//   let choice = prompt('Choose rock, paper, or scissors', 'test') // open the prompt
+//   const humanChoice = choice.toLowerCase()
+//   return humanChoice
+// }
 
-console.log(getHumanChoice())
-
-//initialise scores of both players starting at 0
-// const humanScore = 0
-// const computerScore = 0
+// console.log(getHumanChoice())
 
 const playRound = (humanChoice, computerChoice) => {
   if (humanChoice == 'rock' && computerChoice == 'rock') {
@@ -44,7 +44,14 @@ const playRound = (humanChoice, computerChoice) => {
   }
 }
 
-const humanSelection = getHumanChoice() // hard-coded as 'rock' to test - works as intended
-const computerSelection = getComputerChoice()
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    const humanSelection = 'rock' // hard-coded as 'rock' to test - works as intended
+    const computerSelection = getComputerChoice()
+    console.log(playRound(humanSelection, computerSelection))
+  }
+}
 
-console.log(playRound(humanSelection, computerSelection))
+playGame()
+
+// console.log(playRound(humanSelection, computerSelection))
