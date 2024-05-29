@@ -2,26 +2,16 @@
 // random number is used as an index to select and log a string from the arrayOfChoices array
 const getComputerChoice = () => {
   const randomNum = Math.floor(Math.random() * 3)
-  console.log(randomNum)
-  const arrayOfChoices = ['Rock', 'Paper', 'Scissors']
+  // console.log(randomNum)
+  const arrayOfChoices = ['rock', 'paper', 'scissors']
   const compChoice = arrayOfChoices[randomNum]
   return compChoice
 }
 
-console.log(getComputerChoice())
+console.log('Computer chooses:', getComputerChoice())
 
 function getHumanChoice() {
   let choice = prompt('Choose rock, paper, or scissors', 'test') // open the prompt
-
-  // if (choice.toLowerCase == 'rock') {
-  //   console.log('you chose rock')
-  // } else if (choice.toLowerCase == 'paper') {
-  //   console.log('you chose paper')
-  // } else if (choice.toLowerCase == 'scissors') {
-  //   console.log('you chose scissors')
-  // } else return console.log('error')
-
-  // prompt is case insensitive
   const humanChoice = choice.toLowerCase()
   return humanChoice
 }
@@ -29,8 +19,8 @@ function getHumanChoice() {
 console.log(getHumanChoice())
 
 //initialise scores of both players starting at 0
-const humanScore = 0
-const computerScore = 0
+// const humanScore = 0
+// const computerScore = 0
 
 const playRound = (humanChoice, computerChoice) => {
   if (humanChoice == 'rock' && computerChoice == 'rock') {
@@ -54,7 +44,7 @@ const playRound = (humanChoice, computerChoice) => {
   }
 }
 
-// const humanSelection = getHumanChoice()
-// const computerSelection = getComputerChoice()
+const humanSelection = getHumanChoice() // hard-coded as 'rock' to test - works as intended
+const computerSelection = getComputerChoice()
 
-// playRound(humanSelection, computerSelection)
+console.log(playRound(humanSelection, computerSelection))
