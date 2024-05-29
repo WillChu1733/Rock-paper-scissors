@@ -9,19 +9,22 @@ const getComputerChoice = () => {
 
 getComputerChoice()
 
-// function getHumanChoice() {
-//   let choice = prompt('Choose your symbol', 'test') // open the prompt
+function getHumanChoice() {
+  let choice = prompt('Choose rock, paper, or scissors', 'test') // open the prompt
+  let rock = 'rock' || 'Rock' || 'ROCK'
+  let paper = 'paper' || 'Paper' || 'PAPER'
+  let scissors = 'scissors' || 'Scissors' || 'SCISSORS'
 
-//   if (choice == 1) {
-//     console.log('you chose 1')
-//   } else if (choice == 2) {
-//     console.log('you chose 2')
-//   } else if (choice == 3) {
-//     console.log('you chose 3')
-//   } else return console.log('invalid')
-// }
+  if (choice == rock) {
+    console.log('you chose rock')
+  } else if (choice == paper) {
+    console.log('you chose paper')
+  } else if (choice == scissors) {
+    console.log('you chose scissors')
+  } else return console.log('invalid')
+}
 
-// getHumanChoice()
+getHumanChoice()
 
 // //initialise scores of both players starting at 0
 // const humanScore = 0
