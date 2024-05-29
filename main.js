@@ -4,27 +4,25 @@ const getComputerChoice = () => {
   const randomNum = Math.floor(Math.random() * 3)
   console.log(randomNum)
   const arrayOfChoices = ['Rock', 'Paper', 'Scissors']
-  console.log(arrayOfChoices[randomNum])
+  const compChoice = arrayOfChoices[randomNum]
+  return compChoice
 }
 
-getComputerChoice()
+console.log(getComputerChoice())
 
 function getHumanChoice() {
   let choice = prompt('Choose rock, paper, or scissors', 'test') // open the prompt
-  let rock = 'rock' || 'Rock' || 'ROCK'
-  let paper = 'paper' || 'Paper' || 'PAPER'
-  let scissors = 'scissors' || 'Scissors' || 'SCISSORS'
 
-  if (choice == rock) {
+  if (choice.toLowerCase == 'rock') {
     console.log('you chose rock')
-  } else if (choice == paper) {
+  } else if (choice.toLowerCase == 'paper') {
     console.log('you chose paper')
-  } else if (choice == scissors) {
+  } else if (choice.toLowerCase == 'scissors') {
     console.log('you chose scissors')
-  } else return console.log('invalid')
+  } else return console.log('error')
 }
 
-getHumanChoice()
+// getHumanChoice()
 
 // //initialise scores of both players starting at 0
 // const humanScore = 0
