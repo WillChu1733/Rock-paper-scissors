@@ -5,12 +5,12 @@ let computerScore = 0
 // computer choice picks random number 0-2
 // random number is used as an index to select and log a string from the arrayOfChoices array
 const getComputerChoice = () => {
-  const randomNum = Math.floor(Math.random() * 3)
-  // console.log(randomNum)
   const arrayOfChoices = ['rock', 'paper', 'scissors']
+  const randomNum = Math.floor(Math.random() * arrayOfChoices.length) // remove hard-code 3
+
   const compChoice = arrayOfChoices[randomNum]
 
-  return compChoice
+  return compChoice // can just return arrayOfChoices[randomNum]
 }
 
 function getHumanChoice() {
@@ -23,24 +23,20 @@ function getHumanChoice() {
 }
 
 const playRound = (humanChoice, computerChoice) => {
-  if (humanChoice == 'rock' && computerChoice == 'rock') {
-    return 'Tie'
+  if (humanChoice == computerChoice) {
+    return `Tie, you both picked ${humanChoice}`
   } else if (humanChoice == 'rock' && computerChoice == 'paper') {
     computerScore++
     return 'Computer wins'
   } else if (humanChoice == 'rock' && computerChoice == 'scissors') {
     humanScore++
     return 'Human wins'
-  } else if (humanChoice == 'paper' && computerChoice == 'paper') {
-    return 'Tie'
   } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
     computerScore++
     return 'Computer wins'
   } else if (humanChoice == 'paper' && computerChoice == 'rock') {
     humanScore++
     return 'Human wins'
-  } else if (humanChoice == 'scissors' && computerChoice == 'scissors') {
-    return 'Tie'
   } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
     humanScore++
     return 'Human Wins'
@@ -58,6 +54,8 @@ function playGame() {
     console.log(`Computer chooses: ${computerSelection}`)
     console.log(playRound(humanSelection, computerSelection))
   }
+
+  console.log(`Final Score - ${humanScore}:${computerScore}`)
   if (humanScore > computerScore) {
     console.log('Human wins game')
   } else if (humanScore < computerScore) {
