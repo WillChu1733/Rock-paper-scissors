@@ -20,6 +20,8 @@ function getHumanChoice() {
   // } else if (choice.toLowerCase == 'scissors') {
   //   console.log('you chose scissors')
   // } else return console.log('error')
+
+  // prompt is case insensitive
   const humanChoice = choice.toLowerCase()
   return humanChoice
 }
@@ -30,7 +32,27 @@ console.log(getHumanChoice())
 const humanScore = 0
 const computerScore = 0
 
-const playRound = (humanChoice, computerChoice) => {}
+const playRound = (humanChoice, computerChoice) => {
+  if (humanChoice == 'rock' && computerChoice == 'rock') {
+    return 'Tie'
+  } else if (humanChoice == 'rock' && computerChoice == 'paper') {
+    return 'Computer wins'
+  } else if (humanChoice == 'rock' && computerChoice == 'scissors') {
+    return 'Human wins'
+  } else if (humanChoice == 'paper' && computerChoice == 'paper') {
+    return 'Tie'
+  } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
+    return 'Computer wins'
+  } else if (humanChoice == 'paper' && computerChoice == 'rock') {
+    return 'Human wins'
+  } else if (humanChoice == 'scissors' && computerChoice == 'scissors') {
+    return 'Tie'
+  } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
+    return 'Human Wins'
+  } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
+    return 'Computer wins'
+  }
+}
 
 // const humanSelection = getHumanChoice()
 // const computerSelection = getComputerChoice()
