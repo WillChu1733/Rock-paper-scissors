@@ -15,10 +15,18 @@ const getComputerChoice = () => {
 
 function getHumanChoice() {
   // open the prompt
-  let humanChoice = prompt(
-    'Choose rock, paper, or scissors',
-    'rock, paper, scissors'
-  ).toLowerCase()
+  let validChoices = ['rock', 'paper', 'scissors']
+  let humanChoice = ''
+
+  while (true) {
+    humanChoice = prompt('Choose rock, paper, or scissors').toLowerCase()
+    if (validChoices.includes(humanChoice)) {
+      break // Exit the loop if the choice is valid
+    } else {
+      alert('Invalid choice, please choose rock, paper, or scissors.')
+    }
+  }
+
   return humanChoice
 }
 
