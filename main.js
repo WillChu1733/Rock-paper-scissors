@@ -2,12 +2,14 @@
 let humanScore = 0
 let computerScore = 0
 
-// computer choice picks random number 0-2
-// random number is used as an index to select and log a string from the arrayOfChoices array
+const rockButton = document.querySelector('.rock')
+const paperButton = document.querySelector('.paper')
+const scissorsButton = document.querySelector('.scissors')
+const outcomeDiv = document.querySelector('.outcome')
+
 const getComputerChoice = () => {
   const arrayOfChoices = ['rock', 'paper', 'scissors']
   const randomNum = Math.floor(Math.random() * arrayOfChoices.length) // remove hard-code 3
-
   const compChoice = arrayOfChoices[randomNum]
 
   return compChoice // can just return arrayOfChoices[randomNum]
@@ -31,44 +33,77 @@ function getHumanChoice() {
 }
 
 const playRound = (humanChoice, computerChoice) => {
+  console.log('1 ', humanChoice, '2 ', computerChoice)
   if (humanChoice == computerChoice) {
-    return `Tie, you both picked ${humanChoice}`
+    const p = document.createElement('p')
+    p.innerText = `Tie, you both picked ${humanChoice}`
+    outcomeDiv.appendChild(p)
   } else if (humanChoice == 'rock' && computerChoice == 'paper') {
     computerScore++
-    return 'Computer wins'
+    const p = document.createElement('p')
+    p.innerText = 'Computer wins'
+    outcomeDiv.appendChild(p)
   } else if (humanChoice == 'rock' && computerChoice == 'scissors') {
     humanScore++
-    return 'Human wins'
+    const p = document.createElement('p')
+    p.innerText = 'Human wins'
+    outcomeDiv.appendChild(p)
   } else if (humanChoice == 'paper' && computerChoice == 'scissors') {
     computerScore++
-    return 'Computer wins'
+    const p = document.createElement('p')
+    p.innerText = 'Computer wins'
+    outcomeDiv.appendChild(p)
   } else if (humanChoice == 'paper' && computerChoice == 'rock') {
     humanScore++
-    return 'Human wins'
+    const p = document.createElement('p')
+    p.innerText = 'Human wins'
+    outcomeDiv.appendChild(p)
   } else if (humanChoice == 'scissors' && computerChoice == 'paper') {
     humanScore++
-    return 'Human Wins'
+    const p = document.createElement('p')
+    p.innerText = 'Human Wins'
+    outcomeDiv.appendChild(p)
   } else if (humanChoice == 'scissors' && computerChoice == 'rock') {
     computerScore++
-    return 'Computer wins'
+    const p = document.createElement('p')
+    p.innerText = 'Computer wins'
+    outcomeDiv.appendChild(p)
   }
 }
 
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-    const humanSelection = getHumanChoice() // hard-coded as 'rock' to test - works as intended
-    const computerSelection = getComputerChoice()
-    console.log(`You choose: ${humanSelection}`)
-    console.log(`Computer chooses: ${computerSelection}`)
-    console.log(playRound(humanSelection, computerSelection))
-  }
+rockButton.addEventListener('click', () => {
+  const computerChoice = getComputerChoice()
+  const humanChoice = 'rock'
+  playRound(humanChoice, computerChoice)
+})
 
-  console.log(`Final Score - ${humanScore}:${computerScore}`)
-  if (humanScore > computerScore) {
-    console.log('Human wins game')
-  } else if (humanScore < computerScore) {
-    console.log('Computer wins game')
-  } else console.log('Tie game')
-}
+paperButton.addEventListener('click', () => {
+  const computerChoice = getComputerChoice()
+  const humanChoice = 'paper'
+  playRound(humanChoice, computerChoice)
+})
 
-playGame()
+scissorsButton.addEventListener('click', () => {
+  const computerChoice = getComputerChoice()
+  const humanChoice = 'scissors'
+  playRound(humanChoice, computerChoice)
+})
+
+// function playGame() {
+//   for (let i = 0; i < 5; i++) {
+//     const humanSelection = getHumanChoice() // hard-coded as 'rock' to test - works as intended
+//     const computerSelection = getComputerChoice()
+//     console.log(`You choose: ${humanSelection}`)
+//     console.log(`Computer chooses: ${computerSelection}`)
+//     console.log(playRound(humanSelection, computerSelection))
+//   }
+
+//   console.log(`Final Score - ${humanScore}:${computerScore}`)
+//   if (humanScore > computerScore) {
+//     console.log('Human wins game')
+//   } else if (humanScore < computerScore) {
+//     console.log('Computer wins game')
+//   } else console.log('Tie game')
+// }
+
+// playGame()
