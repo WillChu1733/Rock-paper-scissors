@@ -1,11 +1,19 @@
 .container {
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
 }
 
 .outcome {
   border: 1px solid black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .score-count {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
